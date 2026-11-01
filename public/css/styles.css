@@ -526,6 +526,10 @@ section {
   flex-shrink: 0;
 }
 
+.panel-placeholder-icon[hidden] {
+  display: none;
+}
+
 .panel-placeholder-icon {
   display: block;
   border-radius: 8px;

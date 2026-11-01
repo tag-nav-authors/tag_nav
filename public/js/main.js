@@ -88,7 +88,7 @@ function resetTaskPanel() {
     "Select an application to browse tasks";
   document.getElementById("task-list").innerHTML = "";
   clearLogo(panelLogo, panelFallback);
-  if (placeholder) placeholder.hidden = false;
+  if (placeholder) placeholder.toggleAttribute("hidden", false);
 }
 
 function selectApp(appDir, appKey) {
@@ -108,7 +108,7 @@ function selectApp(appDir, appKey) {
 
   title.textContent = app?.appDisplay || appKey;
   document.getElementById("task-panel-hint").textContent = "Select a task to play";
-  if (placeholder) placeholder.hidden = true;
+  if (placeholder) placeholder.toggleAttribute("hidden", true);
   applyLogo(panelLogo, panelFallback, appKey, app?.appDisplay);
 
   list.innerHTML = tasks
