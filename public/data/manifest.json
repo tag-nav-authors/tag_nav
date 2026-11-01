@@ -48,7 +48,7 @@
     {
       "id": "youtube_21.05.264",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "taskCount": 15,
       "logoSlug": "youtube"
@@ -3109,7 +3109,7 @@
     {
       "id": "youtube_21.05.264/youtube_appearance",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_appearance",
       "prompt": "Navigate to the screen appearance selection.",
@@ -3165,7 +3165,7 @@
     {
       "id": "youtube_21.05.264/youtube_browse_movies",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_browse_movies",
       "prompt": "Browse the movies and TV shows offered on YouTube.",
@@ -3212,7 +3212,7 @@
     {
       "id": "youtube_21.05.264/youtube_help",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_help",
       "prompt": "Visit the help page.",
@@ -3273,7 +3273,7 @@
     {
       "id": "youtube_21.05.264/youtube_history",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_history",
       "prompt": "Navigate to the history page.",
@@ -3311,7 +3311,7 @@
     {
       "id": "youtube_21.05.264/youtube_notifs",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_notifs",
       "prompt": "Navigate to the notifications settings page.",
@@ -3358,7 +3358,7 @@
     {
       "id": "youtube_21.05.264/youtube_playlists",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_playlists",
       "prompt": "View the user's playlists.",
@@ -3396,7 +3396,7 @@
     {
       "id": "youtube_21.05.264/youtube_privacy",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_privacy",
       "prompt": "Navigate to the privacy settings",
@@ -3443,7 +3443,7 @@
     {
       "id": "youtube_21.05.264/youtube_search",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_search",
       "prompt": "Navigate to the search bar",
@@ -3472,7 +3472,7 @@
     {
       "id": "youtube_21.05.264/youtube_shorts",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_shorts",
       "prompt": "Navigate to the Shorts page.",
@@ -3499,7 +3499,7 @@
     {
       "id": "youtube_21.05.264/youtube_subscriptions",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_subscriptions",
       "prompt": "Navigate to the subscriptions tab.",
@@ -3527,7 +3527,7 @@
     {
       "id": "youtube_21.05.264/youtube_subscriptions_2",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_subscriptions_2",
       "prompt": "Navigate to the subscriptions tab.",
@@ -3555,7 +3555,7 @@
     {
       "id": "youtube_21.05.264/youtube_view_notifs",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_view_notifs",
       "prompt": "Navigate to the notifications page.",
@@ -3599,7 +3599,7 @@
     {
       "id": "youtube_21.05.264/youtube_view_notifs_2",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_view_notifs_2",
       "prompt": "View the user's notifications.",
@@ -3627,7 +3627,7 @@
     {
       "id": "youtube_21.05.264/youtube_your_channel",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_your_channel",
       "prompt": "Navigate to the user's channel.",
@@ -3665,7 +3665,7 @@
     {
       "id": "youtube_21.05.264/youtube_your_videos",
       "app": "youtube",
-      "appDisplay": "Youtube",
+      "appDisplay": "YouTube",
       "version": "21.05.264",
       "task": "youtube_your_videos",
       "prompt": "Navigate to the user's uploaded videos.",

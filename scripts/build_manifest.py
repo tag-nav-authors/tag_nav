@@ -194,8 +194,11 @@ def parse_app_dir(name: str, versions: dict[str, str]) -> tuple[str, str]:
     return name, ""
 
 
+DISPLAY_NAMES = {"youtube": "YouTube"}
+
+
 def display_name(app: str) -> str:
-    return app.replace("_", " ").title()
+    return DISPLAY_NAMES.get(app.lower(), app.replace("_", " ").title())
 
 
 def load_task_meta(task_key: str, files_set: set[str]) -> dict | None:

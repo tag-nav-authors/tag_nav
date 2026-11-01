@@ -8,6 +8,17 @@
   <meta name="description" content="Not All Graphs Are Maps: A Task-Agnostic Exploration Framework for Mobile GUI Navigation (AACL-IJCNLP 2026 Findings). Paper on arXiv and the DestBench dataset on Hugging Face." />
   <meta name="hf-dataset" content="TAG-Nav/DestBench" />
   <meta name="hf-revision" content="main" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TAG-Nav" />
+  <meta property="og:url" content="https://tag-nav-authors.github.io/tag_nav/" />
+  <meta property="og:title" content="Not All Graphs Are Maps: A Task-Agnostic Exploration Framework for Mobile GUI Navigation" />
+  <meta property="og:description" content="AACL-IJCNLP 2026 (Findings). Paper on arXiv and the DestBench dataset on Hugging Face." />
+  <meta property="og:image" content="https://tag-nav-authors.github.io/tag_nav/images/og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Overview of the TAG-Nav framework: explore the app, process the graph, navigate the task" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://huggingface.co" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,13 +29,14 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="nav-logo">TAG Nav</div>
+      <div class="nav-logo">TAG-Nav</div>
       <ul class="nav-links">
         <li><a href="#paper">Paper</a></li>
         <li><a href="#destbench">DestBench</a></li>
         <li><a href="#demo">Live Demo</a></li>
         <li><a href="#apps">Applications</a></li>
         <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#cite">Cite</a></li>
       </ul>
     </div>
   </nav>
@@ -221,6 +233,47 @@
     </div>
   </section>
 
+  <section id="cite">
+    <div class="container">
+      <h2 class="section-title">Citation</h2>
+      <div class="bibtex-card">
+        <div class="bibtex-head">
+          <span>BibTeX</span>
+          <button class="btn bibtex-copy" id="bibtex-copy" type="button">Copy</button>
+        </div>
+        <pre class="bibtex" id="bibtex"><code>@misc{orsini2026graphs,
+  title         = {Not All Graphs Are Maps: A Task-Agnostic Exploration Framework for Mobile GUI Navigation},
+  author        = {Orsini, Adamo and Ayyoubzadeh, Seyed Mehdi and Pinon, Sadman Rakib and Zhang, Hannuo and Baradari, Koosha Gholipour and Yu, Yuanhao and Zuo, Xinxin and Wang, Yang},
+  year          = {2026},
+  eprint        = {2610.22672},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  note          = {Findings of AACL-IJCNLP 2026},
+  url           = {https://arxiv.org/abs/2610.22672}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <p>Contact: <a href="mailto:adamo.orsini@mail.concordia.ca">adamo.orsini@mail.concordia.ca</a></p>
+      <p>DestBench is released under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("bibtex-copy").addEventListener("click", async (e) => {
+      const btn = e.currentTarget;
+      try {
+        await navigator.clipboard.writeText(document.getElementById("bibtex").innerText);
+        btn.textContent = "Copied";
+      } catch {
+        btn.textContent = "Select and copy";
+      }
+      setTimeout(() => { btn.textContent = "Copy"; }, 2000);
+    });
+  </script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
