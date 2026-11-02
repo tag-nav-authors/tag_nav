@@ -715,6 +715,13 @@ section {
   background: #2f5fc4;
 }
 
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
 .instruction-box {
   min-height: 3.5rem;
   padding: 1rem 1.25rem;
