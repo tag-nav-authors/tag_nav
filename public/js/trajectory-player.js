@@ -37,20 +37,31 @@ export class TrajectoryPlayer {
     this.stripEl.innerHTML = "";
     this._setAppHeader(trajectory);
 
-    const prompt = trajectory.prompt || trajectory.prompts?.[0] || "Follow the navigation task.";
-    await this._typewriter(prompt);
-    if (this.abort) return;
-
     const frames = trajectory.frames || [];
     const actions = trajectory.actions || [];
     const iw = trajectory.imageWidth || 960;
     const ih = trajectory.imageHeight || 2142;
 
+    // Start every screenshot downloading now, so most are cached by the time
+    // the typewriter finishes and their step comes up.
+    frames.forEach((frame) => {
+      new Image().src = datasetUrl(trajectory.id, frame);
+    });
+
+    const prompt = trajectory.prompt || trajectory.prompts?.[0] || "Follow the navigation task.";
+    await this._typewriter(prompt);
+    if (this.abort) return;
+
     let prevCard = null;
     for (let i = 0; i < frames.length; i++) {
       if (this.abort) return;
 
-      const card = this._createFrameCard(trajectory.id, frames[i], i);
+      const card = this._createFrameCard(trajectory.id, frames[i], i, iw, ih);
+      // Hold the step back briefly for its screenshot; past that, it appears
+      // at full size with the loading shimmer and the image fades in later.
+      await this._waitForImage(card._img, 1500);
+      if (this.abort) return;
+      if (card._img.complete) card._screen.classList.remove("is-loading");
       this.stripEl.appendChild(card);
 
       if (prevCard) {
@@ -92,7 +103,7 @@ export class TrajectoryPlayer {
     );
   }
 
-  _createFrameCard(trajId, frameName, index) {
+  _createFrameCard(trajId, frameName, index, iw, ih) {
     const card = document.createElement("div");
     card.className = "frame-card";
 
@@ -100,12 +111,16 @@ export class TrajectoryPlayer {
     phone.className = "phone-frame";
 
     const screen = document.createElement("div");
-    screen.className = "phone-screen";
+    screen.className = "phone-screen is-loading";
+    screen.style.aspectRatio = `${iw} / ${ih}`;
 
     const img = document.createElement("img");
-    img.src = datasetUrl(trajId, frameName);
     img.alt = `Frame ${index}`;
     img.loading = "eager";
+    const loaded = () => screen.classList.remove("is-loading");
+    img.addEventListener("load", loaded, { once: true });
+    img.addEventListener("error", loaded, { once: true });
+    img.src = datasetUrl(trajId, frameName);
 
     const tapCursor = document.createElement("div");
     tapCursor.className = "tap-cursor";
@@ -129,6 +144,7 @@ export class TrajectoryPlayer {
     card._tapCursor = tapCursor;
     card._scrollInd = scrollInd;
     card._screen = screen;
+    card._img = img;
     return card;
   }
 
@@ -212,6 +228,20 @@ export class TrajectoryPlayer {
     return new Promise((res) => {
       img.onload = res;
       img.onerror = res;
+    });
+  }
+
+  /** Resolves when the image has loaded or failed, or after `timeoutMs`. */
+  _waitForImage(img, timeoutMs) {
+    if (img.complete) return Promise.resolve();
+    return new Promise((resolve) => {
+      const done = () => {
+        clearTimeout(timer);
+        resolve();
+      };
+      const timer = setTimeout(done, timeoutMs);
+      img.addEventListener("load", done, { once: true });
+      img.addEventListener("error", done, { once: true });
     });
   }
 

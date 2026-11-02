@@ -839,6 +839,28 @@ section {
   width: 100%;
   height: auto;
   vertical-align: top;
+  transition: opacity 0.35s ease;
+}
+
+/* Until its screenshot arrives, a step keeps the full phone size (aspect-ratio
+   is set from the trajectory's image size) and shows a soft shimmer, instead
+   of collapsing to a thin bar. */
+.phone-screen.is-loading {
+  background: linear-gradient(100deg, #e9edf4 30%, #f6f8fb 50%, #e9edf4 70%) 0 0 / 300% 100%;
+  animation: screen-shimmer 1.4s ease-in-out infinite;
+}
+
+.phone-screen.is-loading img {
+  opacity: 0;
+}
+
+@keyframes screen-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-screen.is-loading { animation: none; }
 }
 
 .frame-step {
