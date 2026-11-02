@@ -144,6 +144,18 @@ a {
   white-space: nowrap;
 }
 
+.paper-authors .author a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+.paper-authors .author a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
 .paper-affiliations {
   display: flex;
   flex-wrap: wrap;
